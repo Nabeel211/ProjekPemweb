@@ -19,7 +19,7 @@
             <input type="text" class="input-with-icon username" name="username" placeholder="Username" required>
             
             <!-- Password Input -->
-            <input type="password" class="input-with-icon password" name="password" placeholder="Password" required>
+            <input type="password" class="input-with-icon password" name="pwd" placeholder="Password" required>
             
             <div class="checkbox">
                 <input type="checkbox" id="agree-login">
@@ -27,7 +27,7 @@
             </div>
             <button type="submit" class="btn login-btn">Login</button>
         </form>
-        <p class="switch">Don't have an account? <a href="sign up.html">Sign up here</a></p>        
+        <p class="switch">Don't have an account? <a href="sign up.php">Sign up here</a></p>        
     </div>
     </div>
 </body>

@@ -1,3 +1,9 @@
+<?php
+
+//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+if(session_id() == '' || !isset($_SESSION)){session_start();}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +24,18 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#fire-services">Fire Services</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#training">Training</a></li>
+        <li><a href="training.php">Training</a></li>
         <li><a href="#contact">Contact Us</a></li>
-        <li><a href="login.html" class="btn-login">Log In</a></li>
+        
+        <?php
+
+          if(isset($_SESSION['username'])){
+            echo '<li><a href="logout.php">Log Out</a></li>';
+          }
+          else{
+            echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
+          }
+          ?>
         </ul>
     </nav>
 
