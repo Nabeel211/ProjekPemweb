@@ -21,7 +21,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <span class="logo-text">BOMBAKAR</span>
         </div>
         <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="history.html">History</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="struktur.html">Structure</a></li>
