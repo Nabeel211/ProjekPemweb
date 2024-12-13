@@ -24,13 +24,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <li><a href="index.html">Home</a></li>
         <li><a href="history.html">History</a></li>
         <li><a href="#about">About</a></li>
-<<<<<<< HEAD:index.html
         <li><a href="struktur.html">Structure</a></li>
-=======
-        <li><a href="training.php">Training</a></li>
->>>>>>> aa443e0cb4c0607776715a8d661d188eeaf1bbd3:index.php
         <li><a href="#contact">Contact Us</a></li>
-        
         <?php
 
           if(isset($_SESSION['username'])){
@@ -128,3 +123,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
