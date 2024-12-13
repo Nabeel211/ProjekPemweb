@@ -1,3 +1,12 @@
+<?php
+
+//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+if(session_id() == '' || !isset($_SESSION)){session_start();}
+
+if (isset($_SESSION["username"])) {header ("location:index.php");}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +19,12 @@
   <div class="containerlogin">
     <div class="signup-form">
       <h2>Create your account!</h2>
-      <form method="POST" action="processSignUp.php">
+      <form method="POST" action="insert.php">
         <!-- Username Input -->
-        <input type="text" class="input-with-icon username" placeholder="Username" required>
+        <input type="text" class="input-with-icon username" placeholder="Username" name="username" required>
         
         <!-- Password Input -->
-        <input type="password" class="input-with-icon password" placeholder="Password" required>
+        <input type="password" class="input-with-icon password" placeholder="Password" name="password" required>
         
         <!-- Password Verification Input -->
         <input type="password" class="input-with-icon password" placeholder="Password verification" required>
