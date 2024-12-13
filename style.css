@@ -2,8 +2,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #ffffff;
     line-height: 1.6;
+    background-color: #6f6f6f;
   }
   
   header {
@@ -116,7 +117,7 @@ body {
     margin-bottom: 1rem;
   }
   
-  .description {
+  .descriptioni {
     font-size: 1rem;
     color: #666;
     margin-bottom: 2rem;
@@ -141,7 +142,7 @@ body {
   }
   
   .card {
-    background: white;
+    background: rgb(81, 81, 81);
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
@@ -161,29 +162,7 @@ body {
     font-size: 1.1rem;
   }
   
-  /* Footer */
-  footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-  }
-
  /* Navbar with Logo */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    z-index: 20;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-  }
-  
   .logo-container {
     display: flex;
     align-items: center;
@@ -223,21 +202,6 @@ body {
     color: #e63946;
   }
   
-  /* Emergency Button */
-  .btn-header {
-    background: #e63946;
-    color: white;
-    padding: 0.6rem 1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  
-  .btn-header:hover {
-    background: #d62828;
-  }
-  
   /* Adjust Header to Avoid Overlap */
   .header {
     margin-top: 60px; /* Offset to account for the navbar height */
@@ -259,17 +223,6 @@ body {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo-img {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
@@ -282,21 +235,6 @@ body {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-}
-
-.nav-links li {
-  display: inline;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #e63946;
 }
 
 /* Log In Button */
@@ -315,12 +253,18 @@ body {
   color: #e63946;
 }
 /* Footer Styling */
-.footer {
-    background: #1a1a1a;
+  footer {
+    background: #222;
     color: white;
-    padding: 2rem 10%;
-    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 1rem 0;
   }
+  .footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 2rem 10%;
+      font-family: Arial, sans-serif;
+    }
   
   .footer-container {
     display: flex;
