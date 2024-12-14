@@ -295,16 +295,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           }
 
           ?>
-            <!-- <div class="card">
-                <img src="ASET\structure\H1.jpg" alt="Head 1">
-                <h3>Satriadi Gunawan, Drs, M.Si</h3>
-                <p>Head 1</p>
-            </div>
-            <div class="card">
-                <img src="head2.jpg" alt="Head 2">
-                <h3>Sugeng Wiyono, S.Sos, M.Si</h3>
-                <p>Head 2</p>
-            </div> -->
         </div>
 
         <div class="team">
