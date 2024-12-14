@@ -1,3 +1,9 @@
+<?php
+
+//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+if(session_id() == '' || !isset($_SESSION)){session_start();}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -237,19 +243,27 @@
     <header class="header">
         <!-- Navigation Bar -->
         <nav class="navbar">
-            <div class="logo-container">
-            <img src="homepage 1.png" alt="Bombakar Logo" class="logo-img">
-            <span class="logo-text">BOMBAKAR</span>
-            </div>
-            <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#fire-services">Fire Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="struktur.html">Structure</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="login.html" class="btn-login">Log In</a></li>
-            </ul>
-        </nav>
+        <div class="logo-container">
+        <img src="homepage 1.png" alt="Bombakar Logo" class="logo-img">
+        <span class="logo-text">BOMBAKAR</span>
+        </div>
+        <ul class="nav-links">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="history.php">History</a></li>
+        <li><a href="profile.php">About</a></li>
+        <li><a href="struktur.php">Structure</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <?php
+
+          if(isset($_SESSION['username'])){
+            echo '<li><a href="logout.php">Log Out</a></li>';
+          }
+          else{
+            echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
+          }
+          ?>
+        </ul>
+    </nav>
     </header>
     <div class="container">
         <h1>Organizational Structure</h1>

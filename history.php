@@ -1,3 +1,9 @@
+<?php
+
+//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+if(session_id() == '' || !isset($_SESSION)){session_start();}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -246,13 +252,21 @@
             <span class="logo-text">BOMBAKAR</span>
             </div>
             <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="struktur.html">Structure</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="history.php">History</a></li>
+            <li><a href="profile.php">About</a></li>
+            <li><a href="struktur.php">Structure</a></li>
             <li><a href="#contact">Contact Us</a></li>
-            <li><a href="login.html" class="btn-login">Log In</a></li>
-            </ul>
+            <?php
+
+            if(isset($_SESSION['username'])){
+                echo '<li><a href="logout.php">Log Out</a></li>';
+            }
+            else{
+                echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
+            }
+            ?>
+        </ul>
         </nav>
     </header>
     <main>

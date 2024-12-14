@@ -22,9 +22,9 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         </div>
         <ul class="nav-links">
         <li><a href="index.php">Home</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="struktur.html">Structure</a></li>
+        <li><a href="history.php">History</a></li>
+        <li><a href="profile.php">About</a></li>
+        <li><a href="struktur.php">Structure</a></li>
         <li><a href="#contact">Contact Us</a></li>
         <?php
 
