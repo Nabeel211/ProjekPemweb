@@ -12,8 +12,7 @@ Bombakar adalah situs web interaktif yang memberikan informasi dan layanan terki
 - **Statistik penting** terkait pemadam kebakaran.
 - **Panggilan darurat** melalui tombol telepon yang tersedia.
 
-Selain itu, Bombakar mendukung sistem login, registrasi, pengelolaan profil pengguna, dan transaksi pembayaran untuk layanan yang ditawarkan. Aplikasi ini dirancang dengan antarmuka yang mudah digunakan dan teknologi standar untuk memastikan pengalaman pengguna yang optimal.
-Aplikasi ini dibuat menggunakan teknologi standar dan mudah dipahami oleh pengguna. Aplikasi ini dibuat untuk memenuhi tugas Praktikum Pemrogram Web.
+Selain itu, Bombakar mendukung sistem login, registrasi, pengelolaan profil pengguna, dan transaksi pembayaran untuk layanan yang ditawarkan. Aplikasi ini dirancang dengan antarmuka yang mudah digunakan dan teknologi standar untuk memastikan pengalaman pengguna yang optimal. Aplikasi ini dibuat untuk memenuhi tugas Praktikum Pemrogram Web.
 
 ---
 
