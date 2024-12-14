@@ -1,6 +1,6 @@
 # Bombakar
 
-![Logo Bombakar](assets/logo/BOMBAKAR..png)
+![Logo Bombakar](ASET/logo/BOMBAKAR..png)
 
 ---
 
@@ -73,8 +73,8 @@ Bombakar/
 
 ## 🙌 Kontributor
 1. **Fina Julianti** - H1D023119 ([fina.julianti@mhs.unsoed.ac.id](mailto:fina.julianti@mhs.unsoed.ac.id))
-2. **Nabil Daan** - H1D023100 ([nabil.daan@mhs.unsoed.ac.id](mailto:nabil.daan@mhs.unsoed.ac.id))
-3. **Zaim** - H1D023067 ([zaim@mhs.unsoed.ac.id](mailto:zaim@mhs.unsoed.ac.id))
+2. **Daan Nabil Arrazaq** - H1D023100 ([daan.arrazaq@mhs.unsoed.ac.id](mailto:daan.arrazaq@mhs.unsoed.ac.id))
+3. **Muhammad Zaim Pahlevi** - H1D023073 ([muhammad.pahlevi@mhs.unsoed.ac.id](mailto:muhammad.pahlevim@mhs.unsoed.ac.id))
 
 ---
 
