@@ -270,33 +270,10 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <p class="description">
             This page introduces you to the dedicated team committed to protecting the community from fire hazards and providing top-notch emergency services. Every individual within our organizational structure plays a crucial role in ensuring safety and well-being.
         </p>
+
         <div class="head-department">
-        <?php
-          $i=1;
-          include ("koneksi.php");
-          $result = $mysqli->query('SELECT * FROM structure WHERE divisi="head-department"');
-          if($result === FALSE){
-            die(mysql_error());
-          }
-
-          if($result){
-
-            while($obj = $result->fetch_object()) {
-
-              echo '<div class="card">';
-              echo '<img src="ASET/structure/'.$obj->image.'"/>';
-              echo '<h3>'.$obj->nama.'</h3>';
-              echo '<p>'.$obj->divisi.'</p>';
-              echo '</div>';
-
-              $i++;
-            }
-
-          }
-
-          ?>
-            <!-- <div class="card">
-                <img src="ASET\structure\H1.jpg" alt="Head 1">
+            <div class="card">
+                <img src="head1.jpg" alt="Head 1">
                 <h3>Satriadi Gunawan, Drs, M.Si</h3>
                 <p>Head 1</p>
             </div>
@@ -304,7 +281,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
                 <img src="head2.jpg" alt="Head 2">
                 <h3>Sugeng Wiyono, S.Sos, M.Si</h3>
                 <p>Head 2</p>
-            </div> -->
+            </div>
         </div>
 
         <div class="team">

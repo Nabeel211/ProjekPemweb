@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 13, 2024 at 11:23 AM
+-- Generation Time: Dec 14, 2024 at 05:48 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -40,7 +40,32 @@ CREATE TABLE `akun` (
 
 INSERT INTO `akun` (`id`, `username`, `password`, `role`) VALUES
 (1, 'jaim', 'jaim', 'admin'),
-(2, 'palepi', 'palepi', 'user');
+(2, 'palepi', 'palepi', 'user'),
+(3, 'zaim', 'zaim', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `structure`
+--
+
+CREATE TABLE `structure` (
+  `id` int NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `jabatan` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  `divisi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `structure`
+--
+
+INSERT INTO `structure` (`id`, `nama`, `jabatan`, `image`, `divisi`) VALUES
+(1, 'Shinra Kusakabe', 'Head 1', 'H1.jpg', 'head-department'),
+(2, 'Arthur Boyle', 'Head 2', 'H2.jpg', 'head-department'),
+(3, 'Tamaki Kotatsu', 'Head of Prevention', 'T1', 'Team'),
+(4, 'Maki Oze', 'Head of Rescue', 'T2', 'Team');
 
 -- --------------------------------------------------------
 
@@ -69,6 +94,12 @@ ALTER TABLE `akun`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `structure`
+--
+ALTER TABLE `structure`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `training`
 --
 ALTER TABLE `training`
@@ -82,7 +113,13 @@ ALTER TABLE `training`
 -- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `structure`
+--
+ALTER TABLE `structure`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `training`
