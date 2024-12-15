@@ -286,7 +286,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
               echo '<div class="card">';
               echo '<img src="ASET/structure/'.$obj->image.'"/>';
               echo '<h3>'.$obj->nama.'</h3>';
-              echo '<p>'.$obj->divisi.'</p>';
+              echo '<p>'.$obj->jabatan.'</p>';
               echo '</div>';
 
               $i++;
@@ -298,46 +298,28 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         </div>
 
         <div class="team">
-            <div class="card">
-                <img src="team1.jpg" alt="Team Member 1">
-                <h4>Budi Haryono, M.Sc.Dev.</h4>
-                <p>Head of Prevention</p>
-            </div>
-            <div class="card">
-                <img src="team2.jpg" alt="Team Member 2">
-                <h4>Suheni, S.Sos, MAP</h4>
-                <p>Head of Operations</p>
-            </div>
-            <div class="card">
-                <img src="team3.jpg" alt="Team Member 3">
-                <h4>Hardiansyah, S.Pd., MM</h4>
-                <p>Head of Rescue</p>
-            </div>
-            <div class="card">
-                <img src="team4.jpg" alt="Team Member 4">
-                <h4>Muslim Suasno, S.Sos</h4>
-                <p>Head of Inspection</p>
-            </div>
-            <div class="card">
-                <img src="team5.jpg" alt="Team Member 5">
-                <h4>Awi Rizali, M.Si</h4>
-                <p>Head of Cooperation</p>
-            </div>
-            <div class="card">
-                <img src="team6.jpg" alt="Team Member 6">
-                <h4>Hendra Kristianto, MM</h4>
-                <p>Head of Social</p>
-            </div>
-            <div class="card">
-                <img src="team7.jpg" alt="Team Member 7">
-                <h4>Syamsul Haik, A.P., M.Si</h4>
-                <p>Head of Training</p>
-            </div>
-            <div class="card">
-                <img src="team8.jpg" alt="Team Member 8">
-                <h4>Mukhlis, S.E</h4>
-                <p>Head of Empowerment</p>
-            </div>
+            <?php
+                $i=1;
+                $result = $mysqli->query('SELECT * FROM structure WHERE divisi="Team"');
+                if($result === FALSE){
+                  die(mysql_error());
+                }
+      
+                if($result){
+      
+                  while($obj = $result->fetch_object()) {
+      
+                    echo '<div class="card">';
+                    echo '<img src="ASET/structure/'.$obj->image.'"/>';
+                    echo '<h3>'.$obj->nama.'</h3>';
+                    echo '<p>'.$obj->jabatan.'</p>';
+                    echo '</div>';
+      
+                    $i++;
+                  }
+      
+                }
+            ?>
         </div>
     </div>
 
