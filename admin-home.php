@@ -21,10 +21,10 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <span class="logo-text">Admin</span>
         </div>
         <ul class="nav-links">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="history.php">History</a></li>
-        <li><a href="profile.php">About</a></li>
-        <li><a href="struktur.php">Structure</a></li>
+        <li><a href="admin-home.php">Home</a></li>
+        <li><a href="admin-history.php">History</a></li>
+        <li><a href="admin-profile.php">About</a></li>
+        <li><a href="admin-struktur.php">Structure</a></li>
         <li><a href="#contact">Contact Us</a></li>
         <?php
 

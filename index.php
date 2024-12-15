@@ -29,7 +29,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <?php
 
           if(isset($_SESSION['username'])){
-            echo '<li><a href="logout.php">Log Out</a></li>';
+            echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
+            echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
           }
           else{
             echo '<li><a href="login.php" class="btn-login">Log In</a></li>';

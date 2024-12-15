@@ -248,10 +248,10 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <span class="logo-text">BOMBAKAR</span>
         </div>
         <ul class="nav-links">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="history.php">History</a></li>
-        <li><a href="profile.php">About</a></li>
-        <li><a href="struktur.php">Structure</a></li>
+        <li><a href="admin-home.php">Home</a></li>
+        <li><a href="admin-history.php">History</a></li>
+        <li><a href="admin-profile.php">About</a></li>
+        <li><a href="admin-struktur.php">Structure</a></li>
         <li><a href="#contact">Contact Us</a></li>
         <?php
 
@@ -270,61 +270,56 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <p class="description">
             This page introduces you to the dedicated team committed to protecting the community from fire hazards and providing top-notch emergency services. Every individual within our organizational structure plays a crucial role in ensuring safety and well-being.
         </p>
-
         <div class="head-department">
-            <div class="card">
-                <img src="head1.jpg" alt="Head 1">
-                <h3>Satriadi Gunawan, Drs, M.Si</h3>
-                <p>Head 1</p>
-            </div>
-            <div class="card">
-                <img src="head2.jpg" alt="Head 2">
-                <h3>Sugeng Wiyono, S.Sos, M.Si</h3>
-                <p>Head 2</p>
-            </div>
+        <?php
+          $i=1;
+          include ("koneksi.php");
+          $result = $mysqli->query('SELECT * FROM structure WHERE divisi="head-department"');
+          if($result === FALSE){
+            die(mysql_error());
+          }
+
+          if($result){
+
+            while($obj = $result->fetch_object()) {
+
+              echo '<div class="card">';
+              echo '<img src="ASET/structure/'.$obj->image.'"/>';
+              echo '<h3>'.$obj->nama.'</h3>';
+              echo '<p>'.$obj->jabatan.'</p>';
+              echo '</div>';
+
+              $i++;
+            }
+
+          }
+
+          ?>
         </div>
 
         <div class="team">
-            <div class="card">
-                <img src="team1.jpg" alt="Team Member 1">
-                <h4>Budi Haryono, M.Sc.Dev.</h4>
-                <p>Head of Prevention</p>
-            </div>
-            <div class="card">
-                <img src="team2.jpg" alt="Team Member 2">
-                <h4>Suheni, S.Sos, MAP</h4>
-                <p>Head of Operations</p>
-            </div>
-            <div class="card">
-                <img src="team3.jpg" alt="Team Member 3">
-                <h4>Hardiansyah, S.Pd., MM</h4>
-                <p>Head of Rescue</p>
-            </div>
-            <div class="card">
-                <img src="team4.jpg" alt="Team Member 4">
-                <h4>Muslim Suasno, S.Sos</h4>
-                <p>Head of Inspection</p>
-            </div>
-            <div class="card">
-                <img src="team5.jpg" alt="Team Member 5">
-                <h4>Awi Rizali, M.Si</h4>
-                <p>Head of Cooperation</p>
-            </div>
-            <div class="card">
-                <img src="team6.jpg" alt="Team Member 6">
-                <h4>Hendra Kristianto, MM</h4>
-                <p>Head of Social</p>
-            </div>
-            <div class="card">
-                <img src="team7.jpg" alt="Team Member 7">
-                <h4>Syamsul Haik, A.P., M.Si</h4>
-                <p>Head of Training</p>
-            </div>
-            <div class="card">
-                <img src="team8.jpg" alt="Team Member 8">
-                <h4>Mukhlis, S.E</h4>
-                <p>Head of Empowerment</p>
-            </div>
+            <?php
+                $i=1;
+                $result = $mysqli->query('SELECT * FROM structure WHERE divisi="Team"');
+                if($result === FALSE){
+                  die(mysql_error());
+                }
+      
+                if($result){
+      
+                  while($obj = $result->fetch_object()) {
+      
+                    echo '<div class="card">';
+                    echo '<img src="ASET/structure/'.$obj->image.'"/>';
+                    echo '<h3>'.$obj->nama.'</h3>';
+                    echo '<p>'.$obj->jabatan.'</p>';
+                    echo '</div>';
+      
+                    $i++;
+                  }
+      
+                }
+            ?>
         </div>
     </div>
 
