@@ -23,7 +23,12 @@ if($result){
       $_SESSION['username'] = $username;
       $_SESSION['role'] = $obj->role;
       $_SESSION['id'] = $obj->id;
-      header("location:index.php");
+      if($_SESSION['role'] = "admin"){
+        header ("location:admin-home.php");
+      }
+      else{
+        header ("location : index.php");
+      }
     } else {
 
         if($flag === 'true'){

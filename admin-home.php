@@ -18,7 +18,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <nav class="navbar">
         <div class="logo-container">
         <img src="homepage 1.png" alt="Bombakar Logo" class="logo-img">
-        <span class="logo-text">BOMBAKAR</span>
+        <span class="logo-text">Admin</span>
         </div>
         <ul class="nav-links">
         <li><a href="index.php">Home</a></li>
