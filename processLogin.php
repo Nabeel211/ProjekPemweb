@@ -1,48 +1,46 @@
 <?php
 
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
-if(session_id() == '' || !isset($_SESSION)){session_start();}
+if (session_id() == '' || !isset($_SESSION)) {
+    session_start();
+}
 
 include 'koneksi.php';
 
 $username = $_POST["username"];
 $password = $_POST["pwd"];
-$flag = 'true';
-//$query = $mysqli->query("SELECT email, password from users");
 
-$result = $mysqli->query('SELECT id,username, password, role from akun order by id asc');
+// Query untuk mendapatkan data akun berdasarkan username dan password
+$result = $mysqli->prepare('SELECT id, username, password, role FROM akun WHERE username = ? AND password = ?');
+$result->bind_param('ss', $username, $password);
+$result->execute();
+$result->store_result();
 
-if($result === FALSE){
-  die(mysql_error());
-}
+// Jika ditemukan data yang cocok
+if ($result->num_rows > 0) {
+    $result->bind_result($id, $db_username, $db_password, $role);
+    $result->fetch();
 
-if($result){
-  while($obj = $result->fetch_object()){
-    if($obj->username === $username && $obj->password === $password) {
+    // Set session berdasarkan data akun
+    $_SESSION['username'] = $db_username;
+    $_SESSION['role'] = $role;
+    $_SESSION['id'] = $id;
 
-      $_SESSION['username'] = $username;
-      $_SESSION['role'] = $obj->role;
-      $_SESSION['id'] = $obj->id;
-      if($_SESSION['role'] = "admin"){
-        header ("location:admin-home.php");
-      }
-      else{
-        header ("location : index.php");
-      }
+    // Redirect berdasarkan role
+    if ($role === 'admin') {
+        header("Location: admin-home.php");
+    } elseif ($role === 'user') {
+        header("Location: index.php");
     } else {
-
-        if($flag === 'true'){
-          redirect();
-          $flag = 'false';
-        }
+        echo '<h1>Role tidak valid!</h1>';
+        header("Refresh: 3; url=index.php");
     }
-  }
+} else {
+    // Jika login gagal
+    echo '<h1>Invalid Login! Redirecting...</h1>';
+    header("Refresh: 3; url=index.php");
 }
 
-function redirect() {
-  echo '<h1>Invalid Login! Redirecting...</h1>';
-  header("Refresh: 3; url=index.php");
-}
-
+$result->close();
+$mysqli->close();
 
 ?>
