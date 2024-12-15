@@ -10,6 +10,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History of BOMBAKAR Konoha</title>
+    <link rel="stylesheet" href="style.css">
     <style>
     /* General Styles */
         * {
@@ -259,14 +260,14 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             <li><a href="#contact">Contact Us</a></li>
             <?php
 
-          if(isset($_SESSION['username'])){
-            echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
-            echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
-          }
-          else{
-            echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
-          }
-          ?>
+            if(isset($_SESSION['username'])){
+                echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
+                echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
+            }
+            else{
+                echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
+            }
+            ?>
         </ul>
         </nav>
     </header>
