@@ -299,22 +299,16 @@
       </aside>
       <section class="profile-form">
         <h2>Edit Your Profile</h2>
-        <form id="profile-form">
+        <form id="profile-form" method="POST" action="edit.php">
           <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter your username" />
-      
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" />
+          <input type="text" id="username" name="username" placeholder="Enter your username" />
       
           <h3>Password Changes</h3>
           <label for="current-password">Current Password</label>
-          <input type="password" id="current-password" placeholder="Enter current password" />
+          <input type="password" id="oldpass" name="oldpass" placeholder="Enter current password" />
       
           <label for="new-password">New Password</label>
-          <input type="password" id="new-password" placeholder="Enter new password" />
-      
-          <label for="confirm-password">Confirm New Password</label>
-          <input type="password" id="confirm-password" placeholder="Re-enter new password" />
+          <input type="password" id="password" name="pwd" placeholder="Enter new password" />
       
           <div class="buttons">
             <button type="button" class="cancel-btn" id="cancel-btn">Cancel</button>
