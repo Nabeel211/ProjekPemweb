@@ -311,8 +311,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <header class="header">
         <!-- Navigation Bar -->
         <nav class="navbar">
-            <div class="logo-container">
-            <img src="pict/logo.png" alt="Bombakar Logo" class="logo-img">
+    <div class="logo-container">
+            <img src="homepage 1.png" alt="Bombakar Logo" class="logo-img">
             <span class="logo-text">BOMBAKAR</span>
             </div>
             <ul class="nav-links">
@@ -331,9 +331,9 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             else{
                 echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
             }
-            ?>     
-            </ul>
-        </nav>
+            ?>
+        </ul>
+    </nav>
     </header>
     <main class="main-content">
         <section class="training-section">
@@ -365,7 +365,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
                         echo '    </div>';
                         echo '    <div class="slider">';
                         echo '        <div class="slides">';
-                        echo '            <img src="' . htmlspecialchars($row['image']) . '" alt="' . htmlspecialchars($row['nama']) . '">';
+                        echo '            <img src="ASET/training/' . htmlspecialchars($row['image']). '">';
                         echo '        </div>';
                         echo '    </div>';
                         echo '    <div class="card-body">';

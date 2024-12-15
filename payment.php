@@ -274,8 +274,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <header class="header">
         <!-- Navigation Bar -->
         <nav class="navbar">
-            <div class="logo-container">
-            <img src="pict/logo.png" alt="Bombakar Logo" class="logo-img">
+    <div class="logo-container">
+            <img src="homepage 1.png" alt="Bombakar Logo" class="logo-img">
             <span class="logo-text">BOMBAKAR</span>
             </div>
             <ul class="nav-links">
@@ -289,14 +289,14 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             if(isset($_SESSION['username'])){
                 echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
                 echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
-                echo '<img src="username.png" alt="Profile" class="profile-img">';
+                echo '<img src="username.png">';
             }
             else{
                 echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
             }
-          ?>     
-            </ul>
-        </nav>
+            ?>
+        </ul>
+    </nav>
     </header>
 
     <?php
@@ -331,7 +331,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         echo '        <h2>' . htmlspecialchars($row['nama']) . '</h2>';
         echo '        <p class="details">Location: ' . htmlspecialchars($row['lokasi']) . '<br>Duration: ' . htmlspecialchars($row['waktu']) . '<br>Price Start: ' . htmlspecialchars($row['harga']) . '</p>';
         echo '        <p>Benefits: ' . htmlspecialchars($row['benefit']) . '</p>';
-        echo '        <img src="' . htmlspecialchars($row['image']) . '" alt="Training Illustration">';
+        echo '        <img src="ASET/training/' . htmlspecialchars($row['image']) . '" alt="Training Illustration">';
         echo '    </div>';
 
     } else {
@@ -343,15 +343,18 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     ?>
     <div class="form-section">
             <h3>Personal Information</h3>
-            <form>
+            <form method="POST" action="paymentsuccess.php">
+                <?php
+                    echo '<input type="hidden" name="training_id" value="' . htmlspecialchars($row['id']) . '">';
+                ?>
                 <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+                <input type="text" id="first-name" name="fname" placeholder="Enter your first name">
 
                 <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name">
+                <input type="text" id="last-name" name="lname" placeholder="Enter your last name">
 
                 <label for="phone-number">Phone Number</label>
-                <input type="text" id="phone-number" name="phone-number" placeholder="Enter your phone number">
+                <input type="text" id="phone-number" name="phone" placeholder="Enter your phone number">
 
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email address">

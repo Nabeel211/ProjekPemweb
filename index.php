@@ -16,7 +16,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <header class="header">
     <!-- Navigation Bar -->
     <nav class="navbar">
-    <div class="logo-container">
+            <div class="logo-container">
             <img src="homepage 1.png" alt="Bombakar Logo" class="logo-img">
             <span class="logo-text">BOMBAKAR</span>
             </div>
@@ -38,7 +38,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             }
             ?>
         </ul>
-    </nav>
+        </nav>
     <!-- Slider Section -->
     <div class="slider">
         <div class="static-content">
