@@ -245,7 +245,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <nav class="navbar">
         <div class="logo-container">
         <img src="homepage 1.png" alt="Bombakar Logo" class="logo-img">
-        <span class="logo-text">BOMBAKAR</span>
+        <span class="logo-text">ADMIN</span>
         </div>
         <ul class="nav-links">
         <li><a href="admin-home.php">Home</a></li>
@@ -272,29 +272,28 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         </p>
         <div class="head-department">
         <?php
-          $i=1;
-          include ("koneksi.php");
-          $result = $mysqli->query('SELECT * FROM structure WHERE divisi="head-department"');
-          if($result === FALSE){
-            die(mysql_error());
-          }
+            $i = 1;
+            include("koneksi.php");
 
-          if($result){
-
-            while($obj = $result->fetch_object()) {
-
-              echo '<div class="card">';
-              echo '<img src="ASET/structure/'.$obj->image.'"/>';
-              echo '<h3>'.$obj->nama.'</h3>';
-              echo '<p>'.$obj->jabatan.'</p>';
-              echo '</div>';
-
-              $i++;
+            $result = $mysqli->query('SELECT * FROM structure WHERE divisi="head-department"');
+            if ($result === FALSE) {
+                die($mysqli->error);
             }
 
-          }
+            if ($result) {
+                while ($obj = $result->fetch_object()) {
+                    echo '<div class="card">';
+                    echo '<img src="ASET/structure/' . htmlspecialchars($obj->image) . '"/>';
+                    echo '<h3>' . htmlspecialchars($obj->nama) . '</h3>';
+                    echo '<p>' . htmlspecialchars($obj->jabatan) . '</p>';
+                    echo '<a href="delete.php?id=' . urlencode($obj->id) . '">Delete</a>';
+                    echo '</div>';
 
-          ?>
+                    $i++;
+                }
+            }
+        ?>
+
         </div>
 
         <div class="team">
@@ -313,6 +312,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
                     echo '<img src="ASET/structure/'.$obj->image.'"/>';
                     echo '<h3>'.$obj->nama.'</h3>';
                     echo '<p>'.$obj->jabatan.'</p>';
+                    echo '<a href="delete.php?id=' . urlencode($obj->id) . '">Delete</a>';
                     echo '</div>';
       
                     $i++;
