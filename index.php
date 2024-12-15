@@ -29,8 +29,9 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             <?php
 
             if(isset($_SESSION['username'])){
-                echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
                 echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
+                echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
+                echo '<img src="username.png">';
             }
             else{
                 echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
@@ -56,15 +57,22 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 </header>
 
 <main>
-    <!-- Company Section -->
     <section class="company" id="about">
-        <h2>Our Company</h2>
-            <p class="subtitle">A Legacy of Firefighting Excellence in Konoha Village</p>
-        <p class="descriptioni">
-        Founded on March 15, 1965, in the heart of Konoha Village, our fire department has been a steadfast guardian of the community for nearly six decades. Over the years, we have grown into a trusted institution equipped with skilled personnel and modern technology to respond swiftly to emergencies...
-        </p>
-        <a href="#" class="btn">More Details</a>
+        <div class="company-content">
+            <div class="company-text">
+                <h2>Our Company</h2>
+                <p class="subtitle">A Legacy of Firefighting Excellence in Konoha Village</p>
+                <p class="descriptioni">
+                    Founded on March 15, 1965, in the heart of Konoha Village, our fire department has been a steadfast guardian of the community for nearly six decades. Over the years, we have grown into a trusted institution equipped with skilled personnel and modern technology to respond swiftly to emergencies...
+                </p>
+                <a href="#" class="btn">More Details</a>
+            </div>
+            <div class="company-image">
+                <img src="pict/company.png" alt="Our Company Image">
+            </div>
+        </div>
     </section>
+    
 
     <!-- Operations Section -->
     <section class="operations" id="fire-services">
@@ -72,19 +80,22 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <h2>Fire Supression & Rescue Operations</h2>
         <div class="operation-cards">
         <div class="card">
-            <img src="homepage 1.png" alt="Fire Suppression">
+            <img src="ASET/foto/1.png" alt="Fire Suppression">
             <h3>Fire Suppression</h3>
+            <h4>Specialized teams extinguish fires and prevent their spread</h4>
         </div>
         <div class="card">
-            <img src="homepage 2.png" alt="Emergency Medical">
+            <img src="ASET/foto/2.png" alt="Emergency Medical">
             <h3>Emergency Medical Services</h3>
+            <h4>Provide urgent medical care during emergencies</h4>
         </div>
         <div class="card">
-            <img src="homepage 3.png" alt="Technical Rescue">
+            <img src="ASET/foto/3.png" alt="Technical Rescue">
             <h3>Technical Rescue Services</h3>
+            <h4>Focus on saving lives in challenging emergencies</h4>
         </div>
         <div class="card">
-            <img src="homepage 1.png" alt="Fire Prevention">
+            <img src="ASET/foto/4.png" alt="Fire Prevention">
             <h3>Fire Prevention & Education</h3>
         </div>
         </div>
@@ -124,6 +135,3 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <script src="script.js"></script>
 </body>
 </html>
-
-
-

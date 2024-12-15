@@ -22,20 +22,21 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         </div>
         <ul class="nav-links">
         <li><a href="index.php">Home</a></li>
-        <li><a href="history.php">History</a></li>
-        <li><a href="profile.php">About</a></li>
-        <li><a href="struktur.php">Structure</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-        <?php
+            <li><a href="history.php">History</a></li>
+            <li><a href="profile.php">About</a></li>
+            <li><a href="struktur.php">Structure</a></li>
+            <li><a href="training.php">Training</a></li>
+            <?php
 
-          if(isset($_SESSION['username'])){
-            echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
-            echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
-          }
-          else{
-            echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
-          }
-          ?>
+            if(isset($_SESSION['username'])){
+                echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
+                echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
+                echo '<img src="username.png">';
+            }
+            else{
+                echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
+            }
+            ?>
         </ul>
     </nav>
     </header>
@@ -45,7 +46,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <p>
             Founded in March 1965, in Konoha Village, our fire department has been dedicated to safeguarding the community for nearly six decades. Over the years, we have grown into a trusted institution equipped with skilled personnel and modern technology to respond swiftly to emergencies.
         </p>
-        <img src="firefighters.jpg" alt="Firefighters">
+        <img src="ASET/foto/CEGAH KEBAKARANnh.png" alt="Firefighters">
         <p>
             Our mission is to ensure the safety and well-being of every resident. We uphold values of courage, resilience, and dedication. 
             <a href="#">More details...</a>

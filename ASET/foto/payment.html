@@ -1,9 +1,3 @@
-<?php
-
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -279,69 +273,37 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             <span class="logo-text">BOMBAKAR</span>
             </div>
             <ul class="nav-links">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="history.php">History</a></li>
-            <li><a href="profile.php">About</a></li>
-            <li><a href="struktur.php">Structure</a></li>
-            <li><a href="training.php">Training</a></li>
-            <?php
-
-            if(isset($_SESSION['username'])){
-                echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
-                echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
-                echo '<img src="username.png" alt="Profile" class="profile-img">';
-            }
-            else{
-                echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
-            }
-          ?>     
+            <li><a href="#home">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="struktur.html">Structure</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="login.html" class="btn-login">Log In</a></li>
+            <li>
+                <a href="my profile.html" class="profile-btn">
+                <img src="pict/username.png" alt="Profile" class="profile-img">
+                </a>
+            </li>        
             </ul>
         </nav>
     </header>
 
-    <?php
-    // Koneksi ke database
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "bombakar";
+    <div class="container">
+        <div class="training-info">
+            <h2>Training Fire Fighter</h2>
+            <p class="details">Location: Konoha Village<br>Duration: 3 Days<br>Price Start: Rp2.000.000</p>
+            <p class="details">Benefits:</p>
+            <ul>
+                <li>Certificate</li>
+                <li>E-Module</li>
+                <li>Membership</li>
+                <li>Training Kit</li>
+                <li>Professional Mentor</li>
+            </ul>
+            <img src="your-image-url-here.jpg" alt="Training Illustration">
+        </div>
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Cek koneksi
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Ambil ID dari URL
-    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-
-    // Query untuk mengambil data pelatihan berdasarkan ID
-    $sql = "SELECT * FROM training WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        // Ambil data pelatihan
-        $row = $result->fetch_assoc();
-        echo '<div class="container">';
-        echo '    <div class="training-info">';
-        echo '        <h2>' . htmlspecialchars($row['nama']) . '</h2>';
-        echo '        <p class="details">Location: ' . htmlspecialchars($row['lokasi']) . '<br>Duration: ' . htmlspecialchars($row['waktu']) . '<br>Price Start: ' . htmlspecialchars($row['harga']) . '</p>';
-        echo '        <p>Benefits: ' . htmlspecialchars($row['benefit']) . '</p>';
-        echo '        <img src="' . htmlspecialchars($row['image']) . '" alt="Training Illustration">';
-        echo '    </div>';
-
-    } else {
-        echo "<p>Training not found.</p>";
-    }
-
-    $stmt->close();
-    $conn->close();
-    ?>
-    <div class="form-section">
+        <div class="form-section">
             <h3>Personal Information</h3>
             <form>
                 <label for="first-name">First Name</label>

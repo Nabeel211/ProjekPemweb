@@ -10,7 +10,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History of BOMBAKAR Konoha</title>
-    <link rel="stylesheet" href="style.css">
     <style>
     /* General Styles */
         * {
@@ -257,12 +256,13 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             <li><a href="history.php">History</a></li>
             <li><a href="profile.php">About</a></li>
             <li><a href="struktur.php">Structure</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="training.php">Training</a></li>
             <?php
 
             if(isset($_SESSION['username'])){
-                echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
                 echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
+                echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
+                echo '<img src="username.png">';
             }
             else{
                 echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
@@ -288,7 +288,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
                 Founded on March 15, 1965, in the heart of Konoha Village, our fire department has been a steadfast guardian of the community for nearly six decades. 
                 Over the years, we have grown into a trusted institution, equipped with skilled personnel and modern technology to respond swiftly to emergencies. 
                 With a commitment to protecting lives, property, and the environment, we uphold our mission to ensure the safety and well-being of every resident. 
-                Our legacy is built on courage, resilience, and an unwavering dedication to service.
+                Our legacy is built on courage, resilience, and an unwavering dedication to service.
             </p><br>
             <p>
                 As our village has evolved, so has our fire department. From humble beginnings, 

@@ -316,17 +316,22 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             <span class="logo-text">BOMBAKAR</span>
             </div>
             <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="struktur.html">Structure</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="login.html" class="btn-login">Log In</a></li>
-            <li>
-                <a href="my profile.html" class="profile-btn">
-                <img src="pict/username.png" alt="Profile" class="profile-img">
-                </a>
-            </li>        
+            <li><a href="index.php">Home</a></li>
+            <li><a href="history.php">History</a></li>
+            <li><a href="profile.php">About</a></li>
+            <li><a href="struktur.php">Structure</a></li>
+            <li><a href="training.php">Training</a></li>
+            <?php
+
+            if(isset($_SESSION['username'])){
+                echo '<li><a href="logout.php" class="btn-login">Log Out</a></li>';
+                echo '<li><a href="my profile.php">'.$_SESSION['username'].'</a></li>';
+                echo '<img src="username.png">';
+            }
+            else{
+                echo '<li><a href="login.php" class="btn-login">Log In</a></li>';
+            }
+            ?>     
             </ul>
         </nav>
     </header>
